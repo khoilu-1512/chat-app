@@ -34,12 +34,11 @@
       color: #5d5b8d;
       font-weight: bold;
       font-size: 24px;
-
     }
 
     .title {
       color: #5d5b8d;
-      font-size: 12px;
+      font-size: 16px;
     }
 
     form {
@@ -78,6 +77,12 @@
           width: 32px;
         }
       }
+
+      .error {
+        color: red;
+        font-size: 12px;
+        text-align: center;
+      }
     }
     p {
       color: #5d5b8d;
@@ -102,7 +107,7 @@
     display: flex;
     overflow: hidden;
     @include tablet {
-     width: 90%;
+      width: 90%;
     }
 
     .sidebar {
