@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useRef } from 'react';
-import { AuthContext } from '../context/AuthContext';
-import { ChatContext } from '../context/ChatContext';
 
+import { AuthContext, ChatContext } from '../context';
 import getInitials from '../utils';
 
 const Message = ({ message }) => {
@@ -14,20 +13,19 @@ const Message = ({ message }) => {
     ref.current?.scrollIntoView({ behavior: 'smooth' });
   }, [message]);
 
+  const loggedInUserID = message.senderId === currentUser.uid;
+
   return (
-    <div
-      ref={ref}
-      className={`message ${message.senderId === currentUser.uid && 'owner'}`}
-    >
-      <div className='messageInfo'>
-        <span className='messageAvatar'>
-          {message.senderId === currentUser.uid
+    <div ref={ref} className={`message ${loggedInUserID && 'owner'}`}>
+      <div className='message__info'>
+        <span className='message__avatar'>
+          {loggedInUserID
             ? getInitials(currentUser.displayName)
             : getInitials(data.user.displayName)}
         </span>
         <span>just now</span>
       </div>
-      <div className='messageContent'>
+      <div className='message__content'>
         <p>{message.text}</p>
       </div>
     </div>

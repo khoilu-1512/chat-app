@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import { signOut } from 'firebase/auth';
-import { auth } from '../firebase';
-import { AuthContext } from '../context/AuthContext';
 
+import { AuthContext } from '../context/AuthContext';
+import { auth } from '../firebase';
 import getInitials from '../utils';
 
 const Navbar = () => {
@@ -10,9 +10,11 @@ const Navbar = () => {
 
   return (
     <div className='navbar'>
-      <span className='logo'>Gossip Chat</span>
-      <div className='user'>
-        <span className='avatar'>{getInitials(currentUser.displayName)}</span>
+      <span className='navbar__logo'>Gossip Chat</span>
+      <div className='navbar__user'>
+        <span className='navbar__user-avatar'>
+          {getInitials(currentUser.displayName)}
+        </span>
         <button onClick={() => signOut(auth)}>Logout</button>
       </div>
     </div>

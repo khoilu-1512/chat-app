@@ -1,6 +1,4 @@
 import React, { useContext, useState } from 'react';
-import { AuthContext } from '../context/AuthContext';
-import { ChatContext } from '../context/ChatContext';
 import {
   arrayUnion,
   doc,
@@ -8,8 +6,10 @@ import {
   Timestamp,
   updateDoc,
 } from 'firebase/firestore';
-import { db } from '../firebase';
 import { v4 as uuid } from 'uuid';
+
+import { AuthContext, ChatContext } from '../context';
+import { db } from '../firebase';
 
 const Input = () => {
   const [text, setText] = useState('');
@@ -51,7 +51,7 @@ const Input = () => {
         onChange={(e) => setText(e.target.value)}
         value={text}
       />
-      <div className='send'>
+      <div className='input__send'>
         <button onClick={handleSend}>Send</button>
       </div>
     </div>

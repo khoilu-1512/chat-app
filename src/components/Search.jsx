@@ -10,9 +10,9 @@ import {
   serverTimestamp,
   getDoc,
 } from 'firebase/firestore';
-import { db } from '../firebase';
-import { AuthContext } from '../context/AuthContext';
 
+import { AuthContext } from '../context/AuthContext';
+import { db } from '../firebase';
 import getInitials from '../utils';
 
 const Search = () => {
@@ -79,7 +79,7 @@ const Search = () => {
   };
   return (
     <div className='search'>
-      <div className='searchForm'>
+      <div className='search__form'>
         <input
           type='text'
           placeholder='Find a user'
@@ -90,9 +90,11 @@ const Search = () => {
       </div>
       {err && <span>User not found!</span>}
       {user && (
-        <div className='userChat' onClick={handleSelect}>
-          <span className='userAvatar'>{getInitials(user.displayName)}</span>
-          <div className='userChatInfo'>
+        <div className='search__user-chat' onClick={handleSelect}>
+          <span className='search__user-chat__avatar'>
+            {getInitials(user.displayName)}
+          </span>
+          <div className='search__user-chat__info'>
             <span>{user.displayName}</span>
           </div>
         </div>
