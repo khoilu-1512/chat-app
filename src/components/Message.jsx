@@ -18,7 +18,7 @@ const Message = ({ message }) => {
   return (
     <div ref={ref} className={`message ${loggedInUserID && 'owner'}`}>
       <div className='message__info'>
-        <span className='message__avatar'>
+        <span className='message__info__avatar'>
           {loggedInUserID
             ? getInitials(currentUser.displayName)
             : getInitials(data.user.displayName)}

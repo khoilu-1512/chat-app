@@ -21,10 +21,10 @@ const Login = () => {
     }
   };
   return (
-    <div className='formContainer'>
-      <div className='formWrapper'>
-        <span className='logo'>Gossip Chat</span>
-        <span className='title'>Login</span>
+    <div className='container'>
+      <div className='wrapper'>
+        <span className='wrapper__logo'>Gossip Chat</span>
+        <span className='wrapper__title'>Login</span>
         <form onSubmit={handleSubmit}>
           <input type='email' placeholder='Email' />
           <input type='password' placeholder='Password' />
