@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
 import { auth, db } from '../firebase';
 import { doc, setDoc } from 'firebase/firestore';
 import { useNavigate, Link } from 'react-router-dom';
@@ -18,6 +18,11 @@ const Register = () => {
       //Create user
       setErr(false);
       const res = await createUserWithEmailAndPassword(auth, email, password);
+
+      //Update user profile
+      await updateProfile(res.user, {
+        displayName,
+      });
 
       //create user on firestore
       await setDoc(doc(db, 'users', res.user.uid), {

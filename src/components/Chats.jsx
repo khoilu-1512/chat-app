@@ -40,7 +40,9 @@ const Chats = () => {
             key={chat[0]}
             onClick={() => handleSelect(chat[1].userInfo)}
           >
-            <span>{getInitials(chat[1].userInfo.displayName)}</span>
+            <span className='userAvatar'>
+              {getInitials(chat[1].userInfo.displayName)}
+            </span>
             <div className='userChatInfo'>
               <span>{chat[1].userInfo.displayName}</span>
               <p>{chat[1].lastMessage?.text}</p>

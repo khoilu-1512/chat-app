@@ -10,11 +10,10 @@ const Navbar = () => {
 
   return (
     <div className='navbar'>
-      <span className='logo'>Lama Chat</span>
+      <span className='logo'>Gossip Chat</span>
       <div className='user'>
-        <span>{getInitials(currentUser.displayName)}</span>
-        <span>{currentUser.displayName}</span>
-        <button onClick={() => signOut(auth)}>logout</button>
+        <span className='avatar'>{getInitials(currentUser.displayName)}</span>
+        <button onClick={() => signOut(auth)}>Logout</button>
       </div>
     </div>
   );

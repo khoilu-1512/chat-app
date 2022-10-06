@@ -51,6 +51,7 @@
         border: none;
         width: 250px;
         border-bottom: 1px solid #a7bcff;
+        outline: none;
         &::placeholder {
           color: rgb(175, 175, 175);
         }
@@ -72,10 +73,6 @@
         color: #8da4f1;
         font-size: 12px;
         cursor: pointer;
-
-        img {
-          width: 32px;
-        }
       }
 
       .error {
@@ -135,12 +132,15 @@
           display: flex;
           gap: 10px;
 
-          img {
+          .avatar {
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             background-color: #ddddf7;
-            height: 24px;
-            width: 24px;
+            color: white;
             border-radius: 50%;
-            object-fit: cover;
           }
 
           button {
@@ -148,6 +148,7 @@
             color: #ddddf7;
             font-size: 10px;
             border: none;
+            border-radius: 10px;
             cursor: pointer;
             @include tablet {
               position: absolute;
@@ -187,11 +188,17 @@
           background-color: #2f2d52;
         }
 
-        img {
+        .userAvatar {
           width: 50px;
           height: 50px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: #ddddf7;
+          color: #5c57b7;
           border-radius: 50%;
-          object-fit: cover;
+          font-size: 25px;
+          font-weight: bold;
         }
 
         .userChatInfo {
@@ -246,11 +253,10 @@
             color: gray;
             font-weight: 300;
 
-            img {
-              width: 40px;
-              height: 40px;
-              border-radius: 50%;
-              object-fit: cover;
+            .messageAvatar {
+              background-color: #ddddf7;
+              color: #5c57b7;
+              font-weight: bold;
             }
           }
           .messageContent {
@@ -311,14 +317,10 @@
           align-items: center;
           gap: 10px;
 
-          img {
-            height: 24px;
-            cursor: pointer;
-          }
-
           button {
-            border: none;
             padding: 10px 15px;
+            border: none;
+            border-radius: 10px;
             color: white;
             background-color: #8da4f1;
             cursor: pointer;

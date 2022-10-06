@@ -20,7 +20,7 @@ const Message = ({ message }) => {
       className={`message ${message.senderId === currentUser.uid && 'owner'}`}
     >
       <div className='messageInfo'>
-        <span>
+        <span className='messageAvatar'>
           {message.senderId === currentUser.uid
             ? getInitials(currentUser.displayName)
             : getInitials(data.user.displayName)}

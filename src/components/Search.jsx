@@ -91,7 +91,7 @@ const Search = () => {
       {err && <span>User not found!</span>}
       {user && (
         <div className='userChat' onClick={handleSelect}>
-          <span>{getInitials(user.displayName)}</span>
+          <span className='userAvatar'>{getInitials(user.displayName)}</span>
           <div className='userChatInfo'>
             <span>{user.displayName}</span>
           </div>
