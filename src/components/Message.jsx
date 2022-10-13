@@ -6,7 +6,6 @@ import getInitials from '../utils';
 const Message = ({ message }) => {
   const { currentUser } = useContext(AuthContext);
   const { data } = useContext(ChatContext);
-
   const ref = useRef();
 
   useEffect(() => {
@@ -23,11 +22,9 @@ const Message = ({ message }) => {
             ? getInitials(currentUser.displayName)
             : getInitials(data.user.displayName)}
         </span>
-        <span>just now</span>
+        <span className='message__info__time'>just now</span>
       </div>
-      <div className='message__content'>
-        <p>{message.text}</p>
-      </div>
+      <div className='message__content'>{message.text}</div>
     </div>
   );
 };

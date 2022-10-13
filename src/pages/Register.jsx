@@ -42,10 +42,10 @@ const Register = () => {
   };
 
   return (
-    <div className='formContainer'>
-      <div className='formWrapper'>
-        <span className='logo'>Gossip Chat</span>
-        <span className='title'>Register</span>
+    <div className='container'>
+      <div className='wrapper'>
+        <span className='wrapper__logo'>Gossip Chat</span>
+        <span className='wrapper__title'>Register</span>
         <form onSubmit={handleSubmit}>
           <input required type='text' placeholder='Display name' />
           <input required type='email' placeholder='Email' />

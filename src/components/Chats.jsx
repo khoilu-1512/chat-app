@@ -18,6 +18,7 @@ const Chats = () => {
       });
 
       return () => {
+        console.log('unsub', unsub());
         unsub();
       };
     };
@@ -25,14 +26,15 @@ const Chats = () => {
     currentUser.uid && getChats();
   }, [currentUser.uid]);
 
-  const handleSelect = (u) => {
-    dispatch({ type: 'CHANGE_USER', payload: u });
+  const handleSelect = (user) => {
+    dispatch({ type: 'CHANGE_USER', payload: user });
   };
 
   return (
     <div className='chats'>
+      {console.log('chats', chats)}
       {Object.entries(chats)
-        ?.sort((a, b) => b[1].date - a[1].date)
+        ?.sort((oldChat, newChat) => newChat[1].date - oldChat[1].date)
         .map((chat) => (
           <div
             className='user-chat'

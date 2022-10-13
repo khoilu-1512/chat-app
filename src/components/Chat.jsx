@@ -2,7 +2,8 @@ import React, { useContext } from 'react';
 
 import { ChatContext } from '../context/ChatContext';
 import { Add, Cam, More } from '../img/';
-import { Input, Messages } from '../components';
+import Input from '../components/Input';
+import Messages from '../components/Messages';
 
 const Chat = () => {
   const { data } = useContext(ChatContext);

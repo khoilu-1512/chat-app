@@ -43,6 +43,7 @@ const Input = () => {
 
     setText('');
   };
+
   return (
     <div className='input'>
       <input
