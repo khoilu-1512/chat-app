@@ -230,6 +230,9 @@ $error: #ff0000;
           padding: 5px;
           align-items: center;
           gap: 10px;
+          &:hover {
+            cursor: pointer;
+          }
 
           &__avatar {
             width: 40px;
@@ -364,4 +367,9 @@ $error: #ff0000;
       }
     }
   }
+}
+.please__select {
+  margin-top: 100px;
+  text-align: center;
+  color: #5d5b8d;
 }
